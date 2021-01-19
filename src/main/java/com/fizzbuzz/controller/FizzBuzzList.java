@@ -11,10 +11,12 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class FizzBuzzList {
+
     private static final Logger logger = LoggerFactory.getLogger(FizzBuzzList.class);
 
     public List<String> createList(int startValue, int upperLimit) {
         logger.info("Starting createList method of the FizBuzzList class");
+
         List<String> fizzBuzzList = new ArrayList<String>(); //ArrayList to store the string values.
 
         for (int i = startValue; i <= upperLimit; i++) {//From startValue to upperLimit, and depending on the value, the corresponding string is appended to the list.
@@ -28,13 +30,14 @@ public class FizzBuzzList {
             } else
                 fizzBuzzList.add(String.valueOf(i));
         }
+
         saveListToFile(fizzBuzzList); //Call to the saveListToFile method to save the list in a text file.
         logger.info("Ending createList method of the FizBuzzList class");
+
         return fizzBuzzList;
     }
 
     public void saveListToFile(List<String> fizzBuzzList) {
-        
         logger.info("Starting saveListToFile method of the FizBuzzList class");
         logger.debug("Fizzbuzz list to store in a file:" + fizzBuzzList);
  
@@ -57,7 +60,7 @@ public class FizzBuzzList {
         catch (IOException e) {
             e.printStackTrace();
         }
+
         logger.info("Ending saveListToFile method of the FizBuzzList class");
     }
-
 }
